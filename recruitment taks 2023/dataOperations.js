@@ -610,29 +610,6 @@ class Grid {
 
     console.error(`Computing summary totals...`);
   }
-
-  onFunctionsResetClick(event) {
-    const rows = Array.from(this.body.rows);
-    rows.forEach((row) => {
-      Array.from(row.cells).forEach((cell) => {
-        cell.style.border = "";
-      });
-    });
-
-    const rowsToReset = Array.from(this.dataViewRef.values());
-
-    rowsToReset.forEach((row, rowIndex) => {
-      const rowData = data[rowIndex];
-      const columns = Array.from(row.cells);
-      console.log(columns);
-      columns.forEach((cell, columnIndex) => {
-        const columnId = this.metadata[columnIndex].id;
-        cell.textContent = rowData[columnId];
-      });
-    });
-
-    console.error(`Resetting all function...`);
-  }
 }
 
 new Grid();
